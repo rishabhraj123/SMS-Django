@@ -1,0 +1,28 @@
+{% extends 'blog/basic.html' %}
+
+{% block title %}about page{% endblock %}
+
+{% block body %}
+{% load static %}
+
+  <div class="container" align="center">
+    <div class="contact-box">
+      <div class="left">
+        <img src="{% static 'images/about.jpg' %}" style="margin-top: 100px; height: 350px; width: 350px;">
+      </div>
+      <div class="right">
+        
+        <h2>About Us</h2>
+        <form  method="post">
+          {% csrf_token %}
+        <input type="text" class="field" placeholder="Your Full Name" required name='name'>
+        <input type="text" class="field" placeholder="Your Email" name="email">
+        <input type="text" class="field" placeholder="Enquiry" name="enquiry">
+        <input type="text" class="field" placeholder="Phone" name="phone">
+        <textarea placeholder="Message" class="field" name="message"></textarea>
+        <button class="btn">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

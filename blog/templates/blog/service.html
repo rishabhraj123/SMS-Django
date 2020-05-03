@@ -1,0 +1,27 @@
+{% extends 'blog/basic.html' %}
+
+{% block title %}service page{% endblock %}
+
+{% block body %}
+{% load static %}
+	
+  <div class="container" align="center">
+    <div class="contact-box">
+      <div class="left">
+        <img src="{% static 'images/service.jpg' %}" style="margin-top: 90px; height: 200px; width: 200px;">
+        <img src="{% static 'images/service2.jpg' %}" style="margin-top: 90px; height: 200px; width: 200px;">
+        <img src="{% static 'images/service3.jpg' %}" style="margin-top: 10px; height: 200px; width: 200px;">
+        <img src="{% static 'images/service4.jpg' %}" style="margin-top: 10px; height: 200px; width: 200px;">
+      </div>
+      <div class="right">
+        <h2>Services</h2>
+        <input type="text" class="field" placeholder="Your Full Name">
+        <input type="text" class="field" placeholder="Your Email">
+        <input type="text" class="field" placeholder="Enquiry">
+        <input type="text" class="field" placeholder="Phone">
+        <textarea placeholder="Message" class="field"></textarea>
+        <button class="btn">Send</button>
+      </div>
+    </div>
+  </div>
+{% endblock %}

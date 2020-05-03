@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<title>Login Page</title>
+
+	<style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        body:before{
+            content: '';
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-image: url("{% static "images/loginbg.jpeg" %}");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            -webkit-filter: blur(10px);
+            -moz-filter: blur(10px);
+            -o-filter: blur(10px);
+            -ms-filter: blur(10px);
+            filter: blur(10px);
+        }
+        .login-form
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            height: 450px;
+            padding: 80px 40px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,.5);
+        }
+        .avatar {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            top: calc(-80px/2);
+            left: calc(50% - 40px);
+        }
+        .login-form h2 {
+            margin: 0;
+            padding: 0 0 20px;
+            color: #fff;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .login-form p
+        {
+            margin: 0;
+            padding: 0;
+            font-weight: bold;
+            color: #fff;
+        }
+        .login-form input
+        {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .login-form input[type="text"],
+        .login-form input[type="password"]
+        {
+            border: none;
+            border-bottom: 1px solid #fff;
+            background: transparent;
+            outline: none;
+            height: 40px;
+            color: #fff;
+            font-size: 16px;
+        }
+        .login-form input[type="submit"] {
+            height: 30px;
+            color: #fff;
+            font-size: 15px;
+            background: red;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 10%;
+        }
+        .login-form a
+        {
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        input[type="checkbox"] {
+            width: 20%;
+        }
+    </style>
+
+</head>
+<body>
+
+	<!-- <form method="post">
+		{% csrf_token %}
+		<input type="username" name="username" placeholder="UserName" required><br>
+		<input type="password" name="password" placeholder="Password" required><br>
+		<input type="submit">
+	</form> -->
+
+	<div class="login-form">
+	    <img src="{% static 'images/loginimg.jpg' %}" class="avatar">
+	    <h2>Login Form</h2>
+	    <form method="post">
+		{% csrf_token %}
+	    <p>User Name</p>
+	    <input type="text" name="username" placeholder="Enter User Name" required>
+	    <p>Password</p>
+	    <input type="password" name="password" placeholder="Enter Password" required>
+	    <input type="submit" name="submit" value="Sign In"><br><br>
+	    <a href="{% url 'register' %}" style="color: skyblue">Don't have an account? Register HERE</a>
+	    <!-- <p><input type="checkbox"> Remember Me</p> -->
+	    </form>
+        {% for message in messages %}
+        {{message}}
+        {% endfor %}
+	</div>
+
+</body>
+</html>

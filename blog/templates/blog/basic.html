@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<title>{% block title %} {% endblock %}</title>
+	{% block css %}
+	<link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    {% endblock %}
+
+</head>
+<body class="container">
+	<nav>
+      <label class="logo" align="right" style="margin-right: 40px;"><a href="{% url 'index' %}"><img src="{% static 'images/icon.png' %}"style="margin-top: 10px; height: 30px; width: 30px;">SMS</a></label>
+      {% if user.is_authenticated %}
+      <li>{{user.first_name}}</li>
+      {% endif %}
+      <ul>
+        <li><a class="active" href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About Us</a></li>
+        <!-- <li><a href="{% url 'service' %}">Services</a></li> -->
+        <li><a href="{% url 'contact' %}">Contact Us</a></li>
+        <li><a href=" {% url 'feedback' %}">Feedback</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+        <!-- <li>HELLO, {{user.first_name}}</li> -->
+        {% else %}
+        <!-- <li><a href="{% url 'register' %}">Register</a></li> -->
+        <li><a href="{% url 'login' %}">Login</a></li>
+        {% endif %}
+
+      </ul>
+      <label id="icon"><i class="fas fa-bars"></i></label>
+    </nav>
+	<!-- <h3 class="header" align="right" style="margin-right: 20px;"><a href="admin">Admin Login</a></h3> -->
+	<h1 class="title" align="center" style="margin-top: 40px;">Welcome to Student Management System</h1>
+
+{% block body %} {% endblock %}
+
+{% if user.is_authenticated %}
+	<br><br><br><br><br><br><br><br><br><br><br><br>
+	<footer class="footer">
+    <div class="container-text-center" align="center">
+    	<div class="footermenu" align="left" style="padding-left: 100px;"><a href="{% url 'index' %}">Home</a>
+    		<a href="{% url 'about' %}" style="padding-left: 100px;">About</a>
+    		<a href="admin" style="padding-left: 100px;">Admin</a>
+    		<p align="right" style="margin-right: 150px; margin-top: -60px;">Student Management System</p>
+    	</div>
+
+    	<div class="footermenu" align="left" style="padding-left: 100px;"><a href="{% url 'contact' %}">Contact</a>
+    		<a href="{% url 'feedback' %}" style="padding-left: 88px;">Feedback</a>
+    		<a href="{% url 'index' %}" style="padding-left: 78px;">SMS</a>
+    		<p align="right" style="margin-right: 70px; margin-top: -60px;">&copy; Prem Kumar {% now "Y" %}. All rights reserved.</p>
+    	</div>
+      
+    <div/>
+  </footer>
+	
+{% else %}
+  <footer class="footer">
+    <div class="container-text-center" align="center">
+    	<div class="footermenu" align="left" style="padding-left: 100px;"><a href="{% url 'index' %}">Home</a>
+    		<a href="{% url 'about' %}" style="padding-left: 100px;">About</a>
+    		<a href="admin" style="padding-left: 100px;">Admin</a>
+    		<p align="right" style="margin-right: 150px; margin-top: -60px;">Student Management System</p>
+    	</div>
+
+    	<div class="footermenu" align="left" style="padding-left: 100px;"><a href="{% url 'contact' %}">Contact</a>
+    		<a href="{% url 'feedback' %}" style="padding-left: 88px;">Feedback</a>
+    		<a href="{% url 'index' %}" style="padding-left: 78px;">SMS</a>
+    		<p align="right" style="margin-right: 70px; margin-top: -60px;">&copy; Prem Kumar {% now "Y" %}. All rights reserved.</p>
+    	</div>
+      
+    <div/>
+  </footer>
+{% endif %}
+</body>
+</html>

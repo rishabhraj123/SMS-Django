@@ -1,0 +1,31 @@
+{% extends 'blog/basic.html' %}
+
+{% block title %}contact page{% endblock %}
+
+{% block body %}
+{% load static %}
+	
+  <div class="container" align="center">
+    <div class="contact-box">
+      <div class="left">
+        <img src="{% static 'images/contact.jpg' %}" style="margin-top: 120px; height: 320px; width: 320px;">
+      </div>
+      <div class="right">
+        <h2>Contact Us</h2>
+        <input type="text" class="field" placeholder="Your Full Name">
+        <input type="text" class="field" placeholder="Your Email">
+        <!-- <input type="text" class="field" placeholder="Phone"> -->
+        <textarea placeholder="Message" class="field"></textarea>
+        <iframe width="345" height="150" frameborder="0" scrolling="no" marginheight="0"
+        marginwidth="0" src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Mumbai&amp;aq=&amp;sll=19.056545,72.853394&amp;sspn=0.010121,0.021136&amp;ie=UTF8&amp;hq=&amp;hnear=Mumbai,+Maharashtra&amp;t=m&amp;z=10&amp;ll=19.075984,72.877656&amp;output=embed">
+        </iframe>
+        <br />
+        <small><a href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Mumbai&amp;aq=&amp;sll=19.056545,72.853394&amp;sspn=0.010121,0.021136&amp;ie=UTF8&amp;hq=&amp;hnear=Mumbai,+Maharashtra&amp;t=m&amp;z=10&amp;ll=19.075984,72.877656"
+        style="color: #0000FF; text-align: left">View Larger Map</a></small> 
+        <br/>
+        <br/> 
+        <button class="btn">Send</button>
+      </div>
+    </div>
+  </div>
+{% endblock %}

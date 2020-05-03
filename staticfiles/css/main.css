@@ -1,0 +1,177 @@
+.admintitle{
+	background-color: #34495e;
+	color: #fff;
+	margin-left: 50px;
+	margin-right: 50px;
+	height: 140px;
+	line-height: 140px;
+}
+.Dashboard{
+	background-color: #fff;
+	color: #000;
+	margin-top: 0px;
+	margin-left: 50px;
+	margin-right: 50px;
+	height: 140px;
+	font-size: 25px;
+}
+.container{
+	background-color: #fff;
+	color: #fff;
+}
+.head{
+	background-color: lightblue;
+	color: black;
+}
+.title{
+	background-color: white;
+	color: royalblue;
+}
+.hide{
+	background-color: lightblue;
+	color: black;
+}
+.insert{
+	background-color: lightblue;
+	color: black;
+}
+
+nav{
+  height: 80px;
+  width: 100%;
+  background: #34495e;
+}
+label.logo{
+  font-size: 35px;
+  font-weight: bold;
+  padding: 0 100px;
+  line-height: 80px;
+  color: white;
+}
+label.logo a{
+  font-size: 30px;
+}
+nav ul{
+  float: right;
+  margin-right: 40px;
+}
+nav li{
+  display: inline-block;
+  margin: 0 8px;
+  line-height: 80px;
+}
+nav a{
+  color: white;
+  font-size: 18px;
+  padding: 7px 10px;
+  text-transform: uppercase;
+  border-radius: 3px;
+  border: 1px solid transparent;
+}
+li a.active,li a:hover{
+  transition: .5s;
+  border: 1px solid white;
+}
+nav #icon{
+  color: white;
+  font-size: 30px;
+  float: right;
+  margin-right: 40px;
+  line-height: 80px;
+  cursor: pointer;
+  display: none;
+}
+@media (max-width: 1048px){
+  label.logo{
+    font-size: 32px;
+    padding-left: 60px;
+  }
+  nav ul{
+    margin-right: 20px;
+  }
+  nav a{
+    font-size: 17px;
+  }
+}
+@media (max-width: 909px){
+  nav #icon{
+    display: block;
+  }
+  nav ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2f3640;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav a{
+    font-size: 20px;
+  }
+  a.active,a:hover{
+    border: none;
+    color: #3498db;
+  }
+  nav ul.active{
+    left: 0;
+  }
+}
+.container-text-center{
+  font-size: 17px;
+  margin-top: 63px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background-color: #333333;
+  color: white;
+  line-height: 60px;
+}
+
+.footermenu a{
+  color: white;
+}
+
+/* shadow color code - #373737*/
+
+.container-text-center-login{
+  font-size: 17px;
+  margin-top: 247px;
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: #333333;
+  color: white;
+  line-height: 60px;
+}
+.container-text-center-insert{
+  font-size: 17px;
+  margin-top: 152px;
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: #333333;
+  color: white;
+  line-height: 60px;
+}
+.container-text-center-update{
+  font-size: 17px;
+  margin-top: 315px;
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: #333333;
+  color: white;
+  line-height: 60px;
+}
+.container-text-center-delete{
+  font-size: 17px;
+  margin-top: 315px;
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: #333333;
+  color: white;
+  line-height: 60px;
+}
